@@ -2,6 +2,7 @@
 
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\User; 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
@@ -42,8 +43,16 @@ Route::get('/categories' , function(){
 Route::get('/categories/{category:slug}' , function(Category $category){
     return view('category' , [
         'title' => $category->nama , 
-        'posts' => $category->posts , 
-        'category' => $category->nama
+        'posts' => $category->posts 
+    ]);
+
+});
+
+
+Route::get('/authors/{author:username}' , function(User $author){
+    return view('post' , [
+        'title' => 'Daftar Halaman Blog' , 
+        'posts' => $author->posts
     ]);
 
 });
