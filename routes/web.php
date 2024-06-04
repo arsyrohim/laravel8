@@ -41,9 +41,9 @@ Route::get('/categories' , function(){
 }); 
 
 Route::get('/categories/{category:slug}' , function(Category $category){
-    return view('category' , [
-        'title' => $category->nama , 
-        'posts' => $category->posts 
+    return view('post' , [
+        'title' => " Post By Category : $category->nama " , 
+        'posts' => $category->posts->load(['user' , 'category'])
     ]);
 
 });
@@ -51,8 +51,8 @@ Route::get('/categories/{category:slug}' , function(Category $category){
 
 Route::get('/authors/{author:username}' , function(User $author){
     return view('post' , [
-        'title' => 'Daftar Halaman Blog' , 
-        'posts' => $author->posts
+        'title' => "Post By Author : $author->name " , 
+        'posts' => $author->posts->load(['user' , 'category'])
     ]);
 
 });
