@@ -1,11 +1,22 @@
 
 @extends('layouts.main')
 @section('container')
-    <h1 class="mb-5">{{ $title }}</h1>
+    <h1 class="mb-3 text-center">{{ $title }}</h1>
+
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-6">
+            <form action="/post">
+                <div class="input-group mb-3">
+                    <input type="text" name="search" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon2">
+                    <button class="btn btn-danger" type="submit">Search</button>
+                  </div>
+            </form>
+        </div>
+    </div>
 
     @if ($posts->count())
         <div class="card mb-3">
-            <img src="https://source.unsplash.com/1200x400/?{{ $posts[0]->category->nama }}" class="card-img-top" alt="...">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
             <div class="card-body text-center">
             <h5 class="card-title">
                 <a href="/postd/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">
@@ -20,15 +31,14 @@
             <a href="/postd/{{ $posts[0]->slug }}" class="text-decoration-none btn btn-primary">Read more...</a>
             </div>
         </div>
-    @else
-       <p class="text-center fs-4">Halaman tidak ada</p> 
-    @endif
+  
         <div class="container">
             <div class="row">
             @foreach ($posts->skip(1) as $post)
-                <div class="col-md-4">                   
+                <div class="col-md-4 mb-3">                   
                     <div class="card" >
-                        <img src="https://source.unsplash.com/500x400/?{{ $post->category->nama }}" class="card-img-top" alt="{{$post->category->nama}}">
+                        <div class="position-absolute px-3 py-2 " style="background-color :rgb(0,0,0,0,0.7)"><a href="/categories/{{ $post->category->slug }}" class="text-white text-decoration-none">{{ $post->category->nama }}</a> </div>
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="{{$post->category->nama}}">
                         <div class="card-body">
                           <h5 class="card-title">{{ $post->title }}</h5>
                           <small class="text-muted">
@@ -42,8 +52,11 @@
                 </div>                      
             @endforeach
             </div>
-        </div>
-  
+        </div>  
+
+        @else
+        <p class="text-center fs-4">Halaman tidak ada</p> 
+     @endif
 @endsection
 
 
