@@ -20,7 +20,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item" {{ ($active === 'login') ? 'active' : '' }}>
+                <li class="nav-item {{ ($active === 'login') ? 'active' : '' }}">
                     <a class="nav-link" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
                 </li>
             </ul>
