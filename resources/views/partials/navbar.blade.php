@@ -6,18 +6,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-            <li class="nav-item {{ ($active === 'home') ? 'active' : '' }}">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item {{ ($active === 'about') ? 'active' : '' }}">
-                <a class="nav-link" href="/about">About</a>
-            </li>
-            <li class="nav-item {{ ($active === 'post') ? 'active' : '' }}">
-                <a class="nav-link" href="/blog">Blog</a>
-            </li>
-            <li class="nav-item {{ ($active === 'categories') ? 'active' : '' }}">
-                <a class="nav-link" href="/categories">Categories</a>
-            </li>
+                <li class="nav-item {{ ($active === 'home') ? 'active' : '' }}">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item {{ ($active === 'about') ? 'active' : '' }}">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item {{ ($active === 'post') ? 'active' : '' }}">
+                    <a class="nav-link" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item {{ ($active === 'categories') ? 'active' : '' }}">
+                    <a class="nav-link" href="/categories">Categories</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" {{ ($active === 'login') ? 'active' : '' }}>
+                    <a class="nav-link" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
+                </li>
             </ul>
         </div>
   </div>
