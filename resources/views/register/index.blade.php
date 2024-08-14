@@ -15,8 +15,8 @@
             <label for="email" class="sr-only">Email address</label>
             <input type="email" id="email" name="email" class="form-control" placeholder="Email address" >
 
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control rounded-bottom" placeholder="Password">          
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" name="password" id="password" class="form-control rounded-bottom" placeholder="Password">          
             <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Login</button>       
           </form>
           <small class="d-block text-center mt-3">already registered? <a href="/login">Login</a></small>

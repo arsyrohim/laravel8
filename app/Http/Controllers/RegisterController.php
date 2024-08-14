@@ -15,12 +15,13 @@ class RegisterController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            "name" => "required|max:255" , 
-            "username" => "required|min:3|max:255|unique:users" , 
-            "email" => "required|email|unique:users" , 
-            "password" => "required|min:5|max:255"
+            'name' => "required|max:255" , 
+            'username' => "required|min:3|max:255|unique:users" , 
+            'email' => "required|email|unique:users" , 
+            'password' => "required|min:5|max:255"
         ]) ;
-
-        dd("register berhasil");
+        
+        dd("berhasil register");
+        
     }
 }
