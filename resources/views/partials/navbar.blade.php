@@ -20,9 +20,26 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
+                @auth
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                     Welcome Back , {{ auth()->user()->name }}
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-window"></i> My Dashboard</a>
+                      <div class="dropdown-divider"></div>
+                      <form action="/logout" method="post">
+                        @csrf
+                        <button class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
+                      </form>                      
+                    </div>
+                  </li>
+                @else
                 <li class="nav-item {{ ($active === 'login') ? 'active' : '' }}">
                     <a class="nav-link" href="/login"><i class="bi bi-box-arrow-in-right"></i>Login</a>
                 </li>
+                @endauth
+                
             </ul>
         </div>
   </div>
