@@ -13,6 +13,8 @@
 
     {{-- sylte css --}}
     <link rel="stylesheet" href="/css/style.css">
+    {{-- trix editor  --}}
+    
 
     <title>Arsy Blog | {{ $title }}</title>
   </head>

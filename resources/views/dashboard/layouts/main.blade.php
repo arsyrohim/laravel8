@@ -7,7 +7,8 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.6/examples/dashboard/">
 
-    
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
 
     <!-- Bootstrap core CSS -->
 <!-- Bootstrap CSS -->
@@ -16,6 +17,13 @@
     
     <!-- Custom styles for this template -->
     <link href="/css/dashboard.css" rel="stylesheet">
+
+    <style>
+      trix-toolbar [data-trix-button-group="file-tools"]{
+        display: none;
+      }
+    </style>
+    
   </head>
   <body>
     
